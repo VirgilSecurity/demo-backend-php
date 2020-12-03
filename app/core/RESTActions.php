@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2015-2019 Virgil Security Inc.
+ * Copyright (C) 2015-2020 Virgil Security Inc.
  *
  * All rights reserved.
  *
@@ -120,8 +120,7 @@ class RESTActions
                     $jwt = $this->tokenHelper->getJWT($token[1]);
 
                     $res = ResponseResult::format(['virgilToken' => $jwt], 200);
-                }
-                else {
+                } else {
                     $res = ResponseResult::format(['error-message' => 'Invalid token'], 400);
                 }
             }

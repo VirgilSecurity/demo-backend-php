@@ -9,49 +9,49 @@ Do not use this authentication in production. Requests to /virgil-jwt endpoint m
 ### Prerequisites
 
 * PHP7.2 / PHP7.3
-* **virgil_crypto_php** extension
+* **vscf_foundation_php**, **vscp_pythia_php**, **vsce_phe_php** extensions
 
-#### Add virgil_crypto_php extension into the server
-
-- [Download](https://github.com/VirgilSecurity/sample-backend-php/releases) *virgil-test.zip*, unzip it and execute on your server [virgil-test.php](/_help/virgil-test.php) file.
-
-- [Download](https://github.com/VirgilSecurity/sample-backend-php/releases) and unzip *%YOUR_OS%_extension.zip* archive according to your server operating system and PHP version.
-
-- Make sure you have access to edit the php.ini file (for example, use *root* for the Linux/Darwin or run *cmd* under administrator for the Windows).
-- Copy extensions files to the extensions directory.
-    - For the Linux/Darwin:
-    ```
-     $ path="%PATH_TO_EXTENSIONS_DIR%" && cp virgil_crypto_php.so $path
-    ```
-    - Or for the Windows:
-    ```
-     $ set path=%PATH_TO_EXTENSIONS_DIR% && copy virgil_crypto_php.dll %path%
-    ```
-- Add the extensions in to the php.ini file 
-    ```
-    $ echo "extension=virgil_crypto_php” >> %PATH_TO_PHP.INI%
-    ```
-    
-- Then, restart your server or php-fpm service!
-
-##### Extension installation example
-
-Our web stack is: *Linux, nginx, php7.2-fpm*
-
-- Execute the [virgil-test.php](/_help/virgil-test.php) to find out your path to the extensions directory and path to the php.ini file:
-    <p><img src="https://raw.githubusercontent.com/VirgilSecurity/sample-backend-php/master/_help/s-1.png" width="60%"></p> 
-
-- Then, go to the command line interface (CLI) to specify the paths from the previous step:
-    <p><img src="https://raw.githubusercontent.com/VirgilSecurity/sample-backend-php/master/_help/s-2.png" width="60%"></p>
-
-- Reload the page in your browser to see that extensions is loaded (`IS_EXTENSION_LOADED => true`):
-    <p><img src="https://raw.githubusercontent.com/VirgilSecurity/sample-backend-php/master/_help/s-3.png" width="60%"></p>
-    
-### Clone the repository and install dependencies
+### Install dependencies and extensions
 
 ```
-$ git clone https://github.com/VirgilSecurity/sample-backend-php.git .
 $ composer install
+```
+
+Note that required Virgil extensions installs automatically as post install composer script  (see composer.json)
+```
+Сrypto extensions installation...
+----------
+Checking input... [OK]
+Checking PHP version... [OK]
+Checking OS... [OK]
+Checking package version... [OK]
+Checking PHP extensions directory... [OK]
+Checking additional .ini files directory... [OK]
+----------
+SYSTEM CONFIGURATION:
+Crypto version: 
+OS (short): Linux
+PHP version (short): 7.2
+PHP version (full):
+PHP 7.2.26 (cli) (built: Dec 22 2019 06:01:52) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+    with Xdebug v2.6.1, Copyright (c) 2002-2018, by Derick Rethans
+Extensions directory: /usr/lib/php7/modules
+Additional .ini files directory: /etc/php7/conf.d /etc/php7/conf.d
+----------
+Copying vendor/virgil/crypto-wrapper/_extensions/bin/lin/php7.2/vsce_phe_php7.2_v0.15.2.so to the /usr/lib/php7/modules/... [OK]
+Copying vendor/virgil/crypto-wrapper/_extensions/bin/lin/php7.2/vscf_foundation_php7.2_v0.15.2.so to the /usr/lib/php7/modules/... [OK]
+Copying vendor/virgil/crypto-wrapper/_extensions/bin/lin/php7.2/vscp_pythia_php7.2_v0.15.2.so to the /usr/lib/php7/modules/... [OK]
+Copying vendor/virgil/crypto-wrapper/_extensions/bin/lin/php7.2/virgil_crypto.ini file to the /etc/php7/conf.d/virgil_crypto.ini... [OK]
+Copying vendor/virgil/crypto-wrapper/_extensions/bin/lin/php7.2/virgil_crypto.ini file to the /etc/php7/conf.d/virgil_crypto.ini... [OK]
+----------
+STATUS: Restart your webserver (or php-service if available)
+
+```
+Ensure that **vscf_foundation_php**, **vscp_pythia_php**, **vsce_phe_php** extensions is present in command output after composer install
+```bash
+php -m 
 ```
 
 ### Get Virgil Credentials
@@ -125,13 +125,11 @@ $apiKeyData = base64_decode($privateKeyStr);
 $crypto = new VirgilCrypto();
 $privateKey = $crypto->importPrivateKey($apiKeyData);
 
-$accessTokenSigner = new VirgilAccessTokenSigner();
-
 $appId = $_ENV['APP_ID'];
 $apiKeyId = $_ENV['APP_KEY_ID'];
 $ttl = 3600;
 
-$jwtGenerator = new JwtGenerator($privateKey, $apiKeyId, $accessTokenSigner, $appId, $ttl);
+$jwtGenerator = new SDKJwtGenerator($privateKey->getPrivateKey(), $apiKeyId, $crypto, $appId, $ttl);
 
 $token = $jwtGenerator->generateToken($identity);
 

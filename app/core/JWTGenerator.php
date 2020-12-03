@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2015-2019 Virgil Security Inc.
+ * Copyright (C) 2015-2020 Virgil Security Inc.
  *
  * All rights reserved.
  *
@@ -37,8 +37,8 @@
 
 namespace Core;
 
-use Virgil\CryptoImpl\VirgilAccessTokenSigner;
-use Virgil\CryptoImpl\VirgilCrypto;
+use Virgil\Crypto\Exceptions\VirgilCryptoException;
+use Virgil\Crypto\VirgilCrypto;
 use Virgil\Sdk\Web\Authorization\JwtGenerator as SDKJWTGenerator;
 
 /**
@@ -50,7 +50,7 @@ class JWTGenerator
     /**
      * @param string $identity
      * @return string
-     * @throws \Virgil\CryptoImpl\VirgilCryptoException
+     * @throws VirgilCryptoException
      */
     public function generate(string $identity)
     {
@@ -62,16 +62,13 @@ class JWTGenerator
         $crypto = new VirgilCrypto();
         $privateKey = $crypto->importPrivateKey($apiKeyData);
 
-        // Initialize accessTokenSigner that signs users JWTs
-        $accessTokenSigner = new VirgilAccessTokenSigner();
-
         // Use your App Credentials you got at Virgil Dashboard:
         $appId = $_ENV['APP_ID']; // APP_ID
         $apiKeyId = $_ENV['APP_KEY_ID']; // API_KEY_ID
         $ttl = 3600; // JWT's lifetime
 
         // Setup JWT generator with necessary parameters:
-        $jwtGenerator = new SDKJwtGenerator($privateKey, $apiKeyId, $accessTokenSigner, $appId, $ttl);
+        $jwtGenerator = new SDKJwtGenerator($privateKey->getPrivateKey(), $apiKeyId, $crypto, $appId, $ttl);
 
         // Generate JWT for a user
         // Remember that you must provide each user with his unique JWT
