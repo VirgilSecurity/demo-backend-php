@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5ec5bae5f1f1407b7e5373246440c29",
+    "content-hash": "c1680c99412f40460725f8b2a9f52de3",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -35,7 +35,72 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
+            "support": {
+                "issues": "https://github.com/container-interop/container-interop/issues",
+                "source": "https://github.com/container-interop/container-interop/tree/master"
+            },
+            "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
+        },
+        {
+            "name": "myclabs/php-enum",
+            "version": "1.7.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/myclabs/php-enum.git",
+                "reference": "d178027d1e679832db9f38248fcc7200647dc2b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/d178027d1e679832db9f38248fcc7200647dc2b7",
+                "reference": "d178027d1e679832db9f38248fcc7200647dc2b7",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7",
+                "squizlabs/php_codesniffer": "1.*",
+                "vimeo/psalm": "^3.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MyCLabs\\Enum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP Enum contributors",
+                    "homepage": "https://github.com/myclabs/php-enum/graphs/contributors"
+                }
+            ],
+            "description": "PHP Enum implementation",
+            "homepage": "http://github.com/myclabs/php-enum",
+            "keywords": [
+                "enum"
+            ],
+            "support": {
+                "issues": "https://github.com/myclabs/php-enum/issues",
+                "source": "https://github.com/myclabs/php-enum/tree/1.7.7"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/mnapoli",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/myclabs/php-enum",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-11-14T18:14:52+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -81,33 +146,37 @@
                 "router",
                 "routing"
             ],
+            "support": {
+                "issues": "https://github.com/nikic/FastRoute/issues",
+                "source": "https://github.com/nikic/FastRoute/tree/master"
+            },
             "time": "2018-02-13T20:26:39+00:00"
         },
         {
             "name": "pimple/pimple",
-            "version": "v3.2.3",
+            "version": "v3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Pimple.git",
-                "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32"
+                "reference": "21e45061c3429b1e06233475cc0e1f6fc774d5b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/9e403941ef9d65d20cba7d54e29fe906db42cf32",
-                "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32",
+                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/21e45061c3429b1e06233475cc0e1f6fc774d5b0",
+                "reference": "21e45061c3429b1e06233475cc0e1f6fc774d5b0",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
+                "php": ">=7.2.5",
                 "psr/container": "^1.0"
             },
             "require-dev": {
-                "symfony/phpunit-bridge": "^3.2"
+                "symfony/phpunit-bridge": "^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "3.3.x-dev"
                 }
             },
             "autoload": {
@@ -126,12 +195,15 @@
                 }
             ],
             "description": "Pimple, a simple Dependency Injection Container",
-            "homepage": "http://pimple.sensiolabs.org",
+            "homepage": "https://pimple.symfony.com",
             "keywords": [
                 "container",
                 "dependency injection"
             ],
-            "time": "2018-01-21T07:42:36+00:00"
+            "support": {
+                "source": "https://github.com/silexphp/Pimple/tree/v3.3.1"
+            },
+            "time": "2020-11-24T20:35:42+00:00"
         },
         {
             "name": "psr/container",
@@ -180,6 +252,10 @@
                 "container-interop",
                 "psr"
             ],
+            "support": {
+                "issues": "https://github.com/php-fig/container/issues",
+                "source": "https://github.com/php-fig/container/tree/master"
+            },
             "time": "2017-02-14T16:28:37+00:00"
         },
         {
@@ -230,24 +306,27 @@
                 "request",
                 "response"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/http-message/tree/master"
+            },
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.11.0",
+            "version": "v1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "82ebae02209c21113908c229e9883c419720738a"
+                "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/82ebae02209c21113908c229e9883c419720738a",
-                "reference": "82ebae02209c21113908c229e9883c419720738a",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/f4ba089a5b6366e453971d3aad5fe8e897b37f41",
+                "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=7.1"
             },
             "suggest": {
                 "ext-ctype": "For best performance"
@@ -255,7 +334,11 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11-dev"
+                    "dev-main": "1.20-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
                 }
             },
             "autoload": {
@@ -272,12 +355,12 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                },
-                {
                     "name": "Gert de Pagter",
                     "email": "BackEndTea@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -288,39 +371,52 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2019-02-06T07:57:58+00:00"
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.20.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-23T14:02:19+00:00"
         },
         {
             "name": "virgil/crypto",
-            "version": "v5.1.1",
+            "version": "v6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/VirgilSecurity/virgil-crypto-php.git",
-                "reference": "b5820ab357cb9b3798957650a76e32a7eddeff19"
+                "reference": "03fbcd50aecba0b9e8f82bf1e2cf0b4580b5d8ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VirgilSecurity/virgil-crypto-php/zipball/b5820ab357cb9b3798957650a76e32a7eddeff19",
-                "reference": "b5820ab357cb9b3798957650a76e32a7eddeff19",
+                "url": "https://api.github.com/repos/VirgilSecurity/virgil-crypto-php/zipball/03fbcd50aecba0b9e8f82bf1e2cf0b4580b5d8ee",
+                "reference": "03fbcd50aecba0b9e8f82bf1e2cf0b4580b5d8ee",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6",
-                "virgil/crypto-api": "^5.0"
-            },
-            "provide": {
-                "virgil/crypto-api-implementation": "v5"
+                "ext-json": "*",
+                "myclabs/php-enum": "^1.7",
+                "php": "^7.2",
+                "virgil/crypto-wrapper": "^0.15"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7"
+                "phpunit/phpunit": "^8"
             },
             "type": "standalone",
             "autoload": {
-                "files": [
-                    "virgil_crypto_php.php"
-                ],
                 "psr-4": {
-                    "Virgil\\CryptoImpl\\": "Virgil/CryptoImpl/"
+                    "Virgil\\Crypto\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -355,29 +451,37 @@
                 "verification",
                 "virgil"
             ],
-            "time": "2019-07-04T11:16:31+00:00"
+            "support": {
+                "issues": "https://github.com/VirgilSecurity/virgil-crypto-php/issues",
+                "source": "https://github.com/VirgilSecurity/virgil-crypto-php/tree/v6.1.0"
+            },
+            "time": "2020-11-24T08:18:21+00:00"
         },
         {
-            "name": "virgil/crypto-api",
-            "version": "5.0.0",
+            "name": "virgil/crypto-wrapper",
+            "version": "v0.15.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/VirgilSecurity/virgil-cryptoapi-php.git",
-                "reference": "797dfa266aec50e1e29b0a2a923124e23a57b0f0"
+                "url": "https://github.com/VirgilSecurity/virgil-cryptowrapper-php.git",
+                "reference": "c233a7cd7b8f5bd796697b6806198b53cc4415ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VirgilSecurity/virgil-cryptoapi-php/zipball/797dfa266aec50e1e29b0a2a923124e23a57b0f0",
-                "reference": "797dfa266aec50e1e29b0a2a923124e23a57b0f0",
+                "url": "https://api.github.com/repos/VirgilSecurity/virgil-cryptowrapper-php/zipball/c233a7cd7b8f5bd796697b6806198b53cc4415ee",
+                "reference": "c233a7cd7b8f5bd796697b6806198b53cc4415ee",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "myclabs/php-enum": "^1.7",
+                "php": "^7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Virgil\\CryptoApi\\": "Virgil/CryptoApi/"
+                    "Virgil\\CryptoWrapper\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -388,46 +492,45 @@
                 {
                     "name": "Virgil Security, Inc",
                     "email": "support@virgilsecurity.com",
-                    "homepage": "http://virgilsecurity.com"
+                    "homepage": "https://virgilsecurity.com"
                 }
             ],
-            "description": "Virgil crypto API contains a bunch of common cipher interfaces",
-            "homepage": "http://virgilsecurity.com",
-            "keywords": [
-                "cipher",
-                "crypto api",
-                "virgil crypto"
-            ],
-            "time": "2018-05-14T06:20:45+00:00"
+            "description": "Virgil Security Crypto Wrapper",
+            "homepage": "https://virgilsecurity.com",
+            "support": {
+                "issues": "https://github.com/VirgilSecurity/virgil-cryptowrapper-php/issues",
+                "source": "https://github.com/VirgilSecurity/virgil-cryptowrapper-php/tree/v0.15.2"
+            },
+            "time": "2020-05-21T13:39:11+00:00"
         },
         {
             "name": "virgil/sdk",
-            "version": "v5.1.0",
+            "version": "v6.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/VirgilSecurity/virgil-sdk-php.git",
-                "reference": "4f820f162b49d14638ada62c977be95d696d4832"
+                "reference": "851c16a4c0a31c42efa07b5454650597aa46ee8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VirgilSecurity/virgil-sdk-php/zipball/4f820f162b49d14638ada62c977be95d696d4832",
-                "reference": "4f820f162b49d14638ada62c977be95d696d4832",
+                "url": "https://api.github.com/repos/VirgilSecurity/virgil-sdk-php/zipball/851c16a4c0a31c42efa07b5454650597aa46ee8e",
+                "reference": "851c16a4c0a31c42efa07b5454650597aa46ee8e",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "php": ">=5.6",
-                "virgil/crypto-api-implementation": "^v5.0",
-                "vlucas/phpdotenv": "^2.5"
+                "ext-json": "*",
+                "php": ">=7.2",
+                "virgil/crypto": "^6.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "7.5.1",
-                "virgil/crypto": "^5.0"
+                "phpunit/phpunit": "^8",
+                "vlucas/phpdotenv": "^2.5"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Virgil\\": "Virgil/"
+                    "Virgil\\Sdk\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -465,28 +568,38 @@
                 "verification",
                 "virgil"
             ],
-            "time": "2019-06-21T15:43:09+00:00"
+            "support": {
+                "issues": "https://github.com/VirgilSecurity/virgil-sdk-php/issues",
+                "source": "https://github.com/VirgilSecurity/virgil-sdk-php/tree/v6.1.1"
+            },
+            "time": "2020-12-01T21:16:01+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.6.1",
+            "version": "v2.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "2a7dcf7e3e02dc5e701004e51a6f304b713107d5"
+                "reference": "e1d57f62db3db00d9139078cbedf262280701479"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/2a7dcf7e3e02dc5e701004e51a6f304b713107d5",
-                "reference": "2a7dcf7e3e02dc5e701004e51a6f304b713107d5",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/e1d57f62db3db00d9139078cbedf262280701479",
+                "reference": "e1d57f62db3db00d9139078cbedf262280701479",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9",
-                "symfony/polyfill-ctype": "^1.9"
+                "php": "^5.3.9 || ^7.0 || ^8.0",
+                "symfony/polyfill-ctype": "^1.17"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.0"
+                "ext-filter": "*",
+                "ext-pcre": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7.27"
+            },
+            "suggest": {
+                "ext-filter": "Required to use the boolean validator.",
+                "ext-pcre": "Required to use most of the library."
             },
             "type": "library",
             "extra": {
@@ -505,9 +618,14 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com",
+                    "homepage": "https://gjcampbell.co.uk/"
+                },
+                {
                     "name": "Vance Lucas",
                     "email": "vance@vancelucas.com",
-                    "homepage": "http://www.vancelucas.com"
+                    "homepage": "https://vancelucas.com/"
                 }
             ],
             "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
@@ -516,7 +634,21 @@
                 "env",
                 "environment"
             ],
-            "time": "2019-01-29T11:11:52+00:00"
+            "support": {
+                "issues": "https://github.com/vlucas/phpdotenv/issues",
+                "source": "https://github.com/vlucas/phpdotenv/tree/v2.6.6"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/vlucas/phpdotenv",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-07-14T17:54:18+00:00"
         }
     ],
     "packages-dev": [],
@@ -528,5 +660,6 @@
     "platform": {
         "php": ">=7.2"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }

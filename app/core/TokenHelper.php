@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2015-2019 Virgil Security Inc.
+ * Copyright (C) 2015-2020 Virgil Security Inc.
  *
  * All rights reserved.
  *
@@ -36,6 +36,8 @@
  */
 
 namespace Core;
+
+use Virgil\Crypto\Exceptions\VirgilCryptoException;
 
 /**
  * Class TokenHelper
@@ -97,7 +99,7 @@ class TokenHelper
     /**
      * @param $token
      * @return string
-     * @throws \Virgil\CryptoImpl\VirgilCryptoException
+     * @throws VirgilCryptoException
      */
     public function getJWT($token)
     {
